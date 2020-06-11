@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "New";
+}
+@model CRUDelicious.Models.Dishes
+
+<div class="text-center">
+    <h1>Add a new Dish!</h1>
+</div>
+
+<form class="my-2 form-group row" asp-action="AddDish" asp-controller="Home" method="POST">
+    <div class="my-2 col-sm">
+        <label class="form-label" for="Chef">Chef's Name</label>
+        <input class="form-control form-control-lg" asp-for="Chef">
+        <span class="text-danger" asp-validation-for="Chef"></span>
+
+        <label class="mt-2 form-label" for="Name">Name of Dish</label>
+        <input class="form-control form-control-lg" asp-for="Name">
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+        <label class="mt-2 form-label" for="Calories"># of Calories</label>
+        <input class="form-control form-control-lg" asp-for="Calories">
+        <span class="text-danger" asp-validation-for="Calories"></span>
+    </div>
+
+    <div class="my-2 col-sm">
+        <label class="form-label" for="Tastiness">Tastiness</label>
+        <input class="form-control form-control-lg" asp-for="Tastiness">
+        <span class="text-danger" asp-validation-for="Tastiness"></span>
+    </div>
+
+    <div class="my-2 col-sm">
+        <label class="form-label" for="Description">Description</label>
+        <textarea class="form-control form-control-lg" rows="3" asp-for="Description"></textarea>
+        <span class="text-danger" asp-validation-for="Description"></span>
+
+        <button class="mt-4 btn btn-primary btn-lg btn-block">Add Dish</button>
+    </div>
+</form>
